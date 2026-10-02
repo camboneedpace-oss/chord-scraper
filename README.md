@@ -1,5 +1,7 @@
 # chord-scraper
 
+[![Python package](https://github.com/camboneedpace-oss/chord-scraper/actions/workflows/python-package.yml/badge.svg)](https://github.com/camboneedpace-oss/chord-scraper/actions/workflows/python-package.yml)
+
 Polite scraper for chord-sheet websites (e.g. khmerchords.com) that produces a
 normalized, deduplicated SQLite dataset.
 
@@ -150,6 +152,12 @@ python -m pytest tests/qa_browser.py -m browser -v
 
 With Playwright installed it also runs as part of the full suite
 (`python -m pytest tests/ -q`); without it, the module skips.
+
+## Pre-commit
+
+`pip install pre-commit && pre-commit install` runs the same
+flake8 gate as CI on every commit, so undefined names and
+syntax errors never reach a push.
 
 ## Extending to a new site
 
