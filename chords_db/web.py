@@ -493,7 +493,7 @@ INDEX_HTML = """<!doctype html>
 :root{--bg:#14161a;--fg:#e8e6e1;--dim:#9a978f;--accent:#e0a458;--line:#2a2d33}
 *{box-sizing:border-box}
 [hidden]{display:none !important}  /* .overlay's display:flex would otherwise win */
-body{margin:0;font:15px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--fg);display:flex;flex-direction:column;height:100vh;height:100dvh}
+body{margin:0;font:15px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--fg);display:flex;flex-direction:column;height:100dvh}
 header{display:flex;gap:12px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
 h1{font-size:17px;margin:0}
 #q{flex:1;min-width:180px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:#1c1f24;color:var(--fg)}
@@ -534,7 +534,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:300px 1fr}
 .sheet h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:18px 0 6px}
 pre.line{margin:0;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word}
 pre.chords{color:var(--accent)}
-@media(max-width:760px){main{grid-template-columns:1fr}#sidebar{border-right:0;border-bottom:1px solid var(--line);max-height:40vh}#chords li{display:flex;align-items:baseline;gap:10px;padding:8px 12px}#chords .c{white-space:nowrap}#chords .a{flex:1}}
+@media(max-width:760px){main{grid-template-columns:1fr}#sidebar{border-right:0;border-bottom:1px solid var(--line);max-height:40vh}#chords li{display:flex;align-items:baseline;gap:10px;padding:8px 12px}#chords .c{white-space:nowrap}#chords .a{flex:1}button{padding:10px 14px}#views .tab{padding:10px 0}#q{flex:1 1 150px;min-width:0}#status{flex-basis:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 </style>
 </head>
 <body>
