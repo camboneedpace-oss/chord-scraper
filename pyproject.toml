@@ -1,0 +1,23 @@
+[project]
+name = "chord-scraper"
+version = "0.1.0"
+description = "Polite chord-sheet scraper producing a normalized SQLite dataset"
+requires-python = ">=3.9"
+dependencies = [
+    "httpx>=0.24",
+    "beautifulsoup4>=4.12",
+    "pydantic>=2.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+browser = ["playwright>=1.40"]
+
+[tool.pytest.ini_options]
+markers = [
+    "browser: Playwright/Chrome end-to-end UI tests (tests/qa_browser.py)",
+]
+python_files = ["test_*.py", "*_test.py", "qa_browser.py"]
+
+[project.scripts]
+chord-scraper = "chords_db.__main__:main"
