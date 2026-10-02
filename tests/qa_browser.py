@@ -257,6 +257,12 @@ def test_narrow_viewport_layout(page, server_url, shots):
     assert m["docH"] <= m["vh"] + 1, m   # no vertical overflow
     assert m["sw"] <= m["vw"] + 1, m     # no horizontal overflow
 
+    # controls stay big enough to tap
+    tab = page.locator("#views .tab").first.bounding_box()
+    assert tab["height"] >= 32, f"view tab {tab['height']}px tall"
+    gear = page.locator("#gear").bounding_box()
+    assert gear["height"] >= 32, f"gear button {gear['height']}px tall"
+
     # chord vocabulary rows go compact under the breakpoint
     page.locator("#views .tab", has_text="Chords").click()
     page.wait_for_selector("#chords li[data-chord]")

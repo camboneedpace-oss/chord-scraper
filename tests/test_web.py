@@ -221,6 +221,9 @@ def test_index_html_layout_adapts_to_wrapped_header():
     assert "height:calc(100vh - 57px)" not in INDEX_HTML
     assert "display:flex;flex-direction:column" in INDEX_HTML
     assert "main{flex:1;min-height:0" in INDEX_HTML
+    # the app-shell height uses the dynamic viewport unit
+    assert "height:100dvh" in INDEX_HTML
+    assert "100vh" not in INDEX_HTML
 
 
 def test_index_html_mobile_chord_rows_are_compact():
@@ -228,6 +231,15 @@ def test_index_html_mobile_chord_rows_are_compact():
     # shows more of the vocabulary
     assert "#chords li{display:flex" in INDEX_HTML
     assert "#chords .a{flex:1}" in INDEX_HTML
+
+
+def test_index_html_phone_header_compacts():
+    # on phones the search may shrink below its desktop
+    # minimum so the title and search share a row, and
+    # the long status line gets its own single-line row
+    # instead of wrapping onto one of its own
+    assert "#q{flex:1 1 150px;min-width:0}" in INDEX_HTML
+    assert "#status{flex-basis:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" in INDEX_HTML
 
 
 def test_index_html_settings_form_swallows_enter():
