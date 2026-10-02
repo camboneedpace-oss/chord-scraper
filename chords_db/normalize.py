@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 # Roots match either case; canon_chord() upper-cases the result.
 ROOT = r"[A-Ga-g](?:#|b)?"
